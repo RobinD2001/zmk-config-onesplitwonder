@@ -145,7 +145,7 @@
 
 #define UC_MACRO(name, unicode_bindings) \
 //    / { \
-        macros { \
+//        macros { \
             name: name { \
                 compatible = "zmk,behavior-macro"; \
                 wait-ms = <0>; \
@@ -153,19 +153,19 @@
                 #binding-cells = <0>; \
                 bindings = <OS_UNICODE_LEAD>, <&macro_tap unicode_bindings>, <OS_UNICODE_TRAIL>; \
             }; \
-        }; \
+//        }; \
 //    };
 
 #define UC_MODMORPH(name, uc_binding, shifted_uc_binding) \
 //    / { \
-        behaviors { \
+//        behaviors { \
             name: name { \
                 compatible = "zmk,behavior-mod-morph"; \
                 #binding-cells = <0>; \
                 bindings = <uc_binding>, <shifted_uc_binding>; \
                 mods = <(MOD_LSFT|MOD_RSFT)>; \
             }; \
-        }; \
+//        }; \
 //    };
 
 #define ZMK_UNICODE_SINGLE(name, L0, L1, L2, L3) \
