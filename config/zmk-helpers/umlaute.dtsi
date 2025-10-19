@@ -1,0 +1,28 @@
+
+ZMK_HOLD_TAP(ht_ae,
+    label = "HT_AE";
+    flavor = "tap-preferred";
+    tapping-term-ms = <200>;
+    bindings = <&de_ae &kp E>;
+)
+
+ZMK_HOLD_TAP(ht_ue,
+    label = "HT_UE";
+    flavor = "tap-preferred";
+    tapping-term-ms = <200>;
+    bindings = <&de_ue &kp U>;
+)
+
+ZMK_HOLD_TAP(ht_oe,
+    label = "HT_OE";
+    flavor = "tap-preferred";
+    tapping-term-ms = <200>;
+    bindings = <&de_oe &kp E>;
+)
+
+ZMK_HOLD_TAP(ht_sz,
+    label = "HT_SZ";
+    flavor = "tap-preferred";
+    tapping-term-ms = <200>;
+    bindings = <&de_eszett &kp Z>;
+)
