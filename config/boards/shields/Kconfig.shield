@@ -1,5 +1,0 @@
-config SHIELD_OSW_LEFT
-    def_bool $(shields_list_contains,onesplitwonder_left)
-
-config SHIELD_OSW_RIGHT
-    def_bool $(shields_list_contains,onesplitwonder_right)
