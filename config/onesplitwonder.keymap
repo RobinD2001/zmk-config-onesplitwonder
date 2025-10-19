@@ -127,9 +127,9 @@
 // |      |  ^  |  *  |  /  |  -  |  +  ||	             ||  $  |  #  |  %  |  _  |  ~  |     |
 //                    |     |     |     ||	             ||     |     |     |
                 bindings = <
-   &none  &kp RBKT &kp GT &kp RBRC &kp RPAR &kp AMPS      kp PIPE    &kp DQT  &kp APOS   &kp GRAVE &kp BSLH &none
+   &none  &kp RBKT &kp GT &kp RBRC &kp RPAR &kp AMPS      &kp PIPE    &kp DQT  &kp APOS   &kp GRAVE &kp BSLH &none
    &none  &kp LBKT &kp LT &kp LBRC &kp LPAR &kp EQUAL     &kp AT	 &kp SEMI &kp COLON  &kp QMARK &kp EXCL &none
-&none  &kp CARET &kp STAR &kp FSLH &kp MINUS &kp PLUS	  &kp DOLLAR &kp HASH &kp PERCENT  &kp UNDER  &kp TILDE &none
+   &none  &kp CARET &kp STAR &kp FSLH &kp MINUS &kp PLUS  &kp DOLLAR &kp HASH &kp PERCENT  &kp UNDER  &kp TILDE &none
                                 &none &none  &none		  &none 	 &none	&none
                 >;
             };
