@@ -96,12 +96,12 @@
 // -----------------------------------------------------------------------------------------
 // |  TAB |  Q  	|  W  	  |  E (ä)    |  R  	  |  T  ||   	||  Z  |  U (ü)   |  I	     |  O (ö)  	|  P        | FN   |
 // | BSPC |  A alt 	|  S os	  |  D ctrl   |  F shft   |  G  ||   	||  H  |  J shft  |  K ctrl  |  L os 	|  ; alt    | DEL  |
-// | CAPS |  Y  	|  X  	  |  C        |  V  	  |  B  ||   	||  N  |  M	  |  , 	     |  .   	|  "        | ENT  |
-//                    			| NAV 	| SPC 	  | CTRL|| 	|| SHIFT   | SPC    | SYM num |
+// | CAPS |  Y  	|  X  	  |  C        |  V  	  |  B  ||   	||  N  |  M	      |  , 	     |  .   	|  "        | ENT  |
+//                    			   | NAV 	| SPC 	  | CTRL|| 	    || SHIFT   | SPC    | SYM num |
                 bindings = <
-   &kp TAB   &kp Q 	&kp W 	   &ht_ae      &kp R 	   &kp T   	&kp Z &ht_ue  	  &kp I       &ht_oe 	 &kp P		&sl 3
+   &kp TAB   &kp Q 	&kp W 	   &ht_ae      &kp R 	   &kp T   	      &kp Z  &ht_ue  	  &kp I       &ht_oe 	 &kp P		&sl 3
    &kp BSPC  &hml LALT A &hml LGUI S &hml LCTRL D &hml LSHFT F &kp G   	&kp H &hmr RSHFT J &hmr RCTRL K &hmr RGUI L &hmr RALT SEMI  &kp DEL
-   &caps_word &kp Y 	&kp X 	   &kp C       &kp V 	   &kp B   	&kp N &kp M  	  &kp COMMA   &kp DOT    &kp DASH 	&kp ESC
+   &caps_word &kp Y 	&kp X 	   &kp C       &kp V 	   &kp B   	&kp N &kp M  	  &kp COMMA   &kp DOT    &kp DQT 	&kp ESC
                  			&mo_tog 4 4 &kp SPACE &kp LCTRL   	&kp RSHIFT &kp SPACE &mo_sk 1 2
                 >;
             };
