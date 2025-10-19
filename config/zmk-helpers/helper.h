@@ -30,14 +30,14 @@
 #define ZMK_BEHAVIOR_CORE_tri_state       compatible = "zmk,behavior-tri-state";       #binding-cells = <0>
 
 #define ZMK_BEHAVIOR(name, type, ...) \
-    / { \
-        behaviors { \
+//    / { \
+//        behaviors { \
             name: name { \
                 ZMK_BEHAVIOR_CORE_ ## type; \
                 __VA_ARGS__ \
             }; \
-        }; \
-    };
+//        }; \
+//    };
 
 #define ZMK_CAPS_WORD(name, ...) ZMK_BEHAVIOR(name, caps_word, __VA_ARGS__)
 #define ZMK_HOLD_TAP(name, ...) ZMK_BEHAVIOR(name, hold_tap, __VA_ARGS__)
@@ -57,26 +57,26 @@
 
 #define ZMK_LAYER(...) CONCAT(ZMK_LAYER_, VARGS(__VA_ARGS__))(__VA_ARGS__)
 #define ZMK_LAYER_2(_name, layout) \
-    / { \
-        keymap { \
-            compatible = "zmk,keymap"; \
+//    / { \
+//        keymap { \
+//            compatible = "zmk,keymap"; \
             layer_ ## _name { \
                 display-name = ZMK_HELPER_STRINGIFY(_name); \
                 bindings = <layout>; \
             }; \
-        }; \
-    };
+//        }; \
+//    };
 #define ZMK_LAYER_3(_name, layout, sensors) \
-    / { \
-        keymap { \
-            compatible = "zmk,keymap"; \
+//    / { \
+//        keymap { \
+//            compatible = "zmk,keymap"; \
             layer_ ## _name { \
                 display-name = ZMK_HELPER_STRINGIFY(_name); \
                 bindings = <layout>; \
                 sensor-bindings = <sensors>; \
             }; \
-        }; \
-    };
+//        }; \
+//    };
 
 /* ZMK_COMBOS */
 
@@ -95,7 +95,7 @@
 #define ZMK_COMBO_6(name, combo_bindings, keypos, combo_layers, combo_timeout, combo_idle) \
     ZMK_COMBO_7(name, combo_bindings, keypos, combo_layers, combo_timeout, combo_idle, )
 #define ZMK_COMBO_7(name, combo_bindings, keypos, combo_layers, combo_timeout, combo_idle, combo_vaargs) \
-    / { \
+//    / { \
         combos { \
             compatible = "zmk,combos"; \
             combo_ ## name { \
@@ -107,12 +107,12 @@
                 combo_vaargs \
             }; \
         }; \
-    };
+//    };
 
 /* ZMK_CONDITIONAL_LAYER */
 
 #define ZMK_CONDITIONAL_LAYER(if_layers, then_layer) \
-    / { \
+//    / { \
         conditional_layers { \
             compatible = "zmk,conditional-layers"; \
             tri_layer { \
@@ -120,7 +120,7 @@
                 then-layer = <then_layer>; \
             }; \
         }; \
-    };
+//    };
 
 /* ZMK_UNICODE */
 
@@ -144,7 +144,7 @@
 #endif
 
 #define UC_MACRO(name, unicode_bindings) \
-    / { \
+//    / { \
         macros { \
             name: name { \
                 compatible = "zmk,behavior-macro"; \
@@ -154,10 +154,10 @@
                 bindings = <OS_UNICODE_LEAD>, <&macro_tap unicode_bindings>, <OS_UNICODE_TRAIL>; \
             }; \
         }; \
-    };
+//    };
 
 #define UC_MODMORPH(name, uc_binding, shifted_uc_binding) \
-    / { \
+//    / { \
         behaviors { \
             name: name { \
                 compatible = "zmk,behavior-mod-morph"; \
@@ -166,7 +166,7 @@
                 mods = <(MOD_LSFT|MOD_RSFT)>; \
             }; \
         }; \
-    };
+//    };
 
 #define ZMK_UNICODE_SINGLE(name, L0, L1, L2, L3) \
     UC_MACRO(name ## _lower, &kp L0 &kp L1 &kp L2 &kp L3) \
