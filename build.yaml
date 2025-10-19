@@ -20,7 +20,7 @@
 ---
 include:
   - board: nice_nano_v2
-    shield: onesplitwonder_left
+    shield: corne_left
     cmake-args: -DZMK_CONFIG="C:\Users\robin\Documents\Split Keyboard ZMK\zmk-config-onesplitwonder\config"
   - board: nice_nano_v2
-    shield: onesplitwonder_right
+    shield: corne_right
