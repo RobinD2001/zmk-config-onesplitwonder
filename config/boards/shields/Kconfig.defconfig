@@ -1,0 +1,16 @@
+if SHIELD_OSW_LEFT
+
+config ZMK_KEYBOARD_NAME
+    default "One-Split Wonder"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif
+
+if SHIELD_OSW_LEFT || SHIELD_OSW_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+endif
