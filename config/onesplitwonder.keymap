@@ -61,7 +61,6 @@
             tapping-term-ms = <200>;
             bindings = <&mo>, <&tog>;
         };
-/*
         ht_ae: ht_ae {
             compatible = "zmk,behavior-hold-tap";
             label = "HT_AE";
@@ -93,7 +92,6 @@
             tapping-term-ms = <200>;
             bindings = <&de_eszett>, <&kp Z>;
         };
-*/
     };
 
     keymap {
@@ -106,7 +104,7 @@
 // | CAPS |  Y  	|  X  	  |  C        |  V  	  |  B  ||   	||  N  |  M	      |  , 	     |  .   	|  "        | ENT  |
 //                    			   | NAV 	| SPC 	  | CTRL|| 	    || SHIFT   | SPC    | SYM num |
             bindings = <
-                &kp TAB  &kp Q  &kp W  &mt de_ae E  &kp R  &kp T      &mt de_eszett Z  &mt de_ue U  &kp I  &mt de_oe O  &kp P  &sl FN
+                &kp TAB  &kp Q  &kp W  &ht_ae 0 E  &kp R  &kp T      &ht_sz 0 Z  &ht_ue 0 U  &kp I  &ht_oe 0 O  &kp P  &sl FN
                 &kp BSPC &hml LALT A  &hml LGUI S  &hml LCTRL D  &hml LSHFT F  &kp G   &kp H  &hmr RSHFT J  &hmr RCTRL K  &hmr RGUI L  &hmr RALT SEMI  &kp DEL
                 &caps_word &kp Y  &kp X  &kp C  &kp V  &kp B      &kp N  &kp M  &kp COMMA  &kp DOT  &kp DQT  &kp ESC
                 &mo_tog NAV NAV  &kp SPACE  &kp LCTRL   &kp RSHIFT  &kp SPACE  &mo_sk NUM SYM
