@@ -58,10 +58,10 @@
 // | CAPS |  Y  	|  X  	  |  C        |  V  	  |  B  ||   	||  N  |  M	  |  , 	     |  .   	|  "        | ENT  |
 //                    			| NAV 	| SPC 	  | CTRL|| 	|| SHIFT   | SPC    | SYM num |
                         bindings = <
-   &kp TAB   &kp Q 	&kp W 	   &mt Ä E       &kp R 	   &kp T   	&kp Z &mt Ü U  	  &kp I       &mt Ö O 	 &kp P		&sl 4
+   &kp TAB   &kp Q 	&kp W 	   &mt Ä E       &kp R 	   &kp T   	&kp Z &mt Ü U  	  &kp I       &mt Ö O 	 &kp P		&sl 3
    &kp BSPC  &hml LALT A &hml LGUI S &hml LCTRL D &hml LSHFT F &kp G   	&kp H &hmr RSHFT J &hmr RCTRL K &hmr RGUI L &hmr RALT SEMI  &kp DEL
    &caps_word &kp Y 	&kp X 	   &kp C       &kp V 	   &kp B   	&kp N &kp M  	  &kp COMMA   &kp DOT    &kp DASH 	&kp ESC
-                 			&mo_tog 5 5 &kp SPACE &kp LCTRL   	&kp RSHIFT &kp SPACE &mo_sk 2 3
+                 			&mo_tog 4 4 &kp SPACE &kp LCTRL   	&kp RSHIFT &kp SPACE &mo_sk 1 2
                         >;
                 };
                 numpad_layer {
