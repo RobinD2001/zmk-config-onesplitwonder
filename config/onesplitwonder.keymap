@@ -61,7 +61,7 @@
             tapping-term-ms = <200>;
             bindings = <&mo>, <&tog>;
         };
-
+    };
         ZMK_HOLD_TAP(ht_ae,
             label = "HT_AE";
             flavor = "tap-preferred";
