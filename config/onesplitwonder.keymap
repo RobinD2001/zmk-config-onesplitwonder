@@ -44,7 +44,7 @@
         UC_MODMORPH(ht_sz, &de_sz_lower, &de_sz_upper)
 
         ZMK_HOLD_TAP(ht_ae,
-            label = "HT_AE";
+            //label = "HT_AE";
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
             bindings = <&de_ae &kp E>;
