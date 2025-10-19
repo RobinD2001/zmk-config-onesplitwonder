@@ -1,6 +1,6 @@
 file_format: "1"
-id: onesplitwonder 
-name: One-Split Wonder
+id: onesplitwonder
+name: onesplitwonder
 type: shield
 url: https://github.com/RobinD2001/zmk-config-onesplitwonder
 requires: [nice_nano]
