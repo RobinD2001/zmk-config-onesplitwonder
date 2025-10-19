@@ -8,6 +8,18 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+#include "zmk-helpers/helper.h"
+#include "zmk-helpers/key-labels/34.h"
+#include "zmk-helpers/unicode-chars/german.dtsi"
+
+#define ___ &none
+
+#define DEF 0
+#define NUM 1
+#define SYM 2
+#define FN 3
+#define NAV 4
+
 / {
     behaviors {
         hml: home_row_mod_left {
@@ -50,33 +62,12 @@
             bindings = <&mo>, <&tog>;
         };
 
-        ae_umlaut: ae_umlaut {
-            compatible = "zmk,behavior-mod-morph";
-            label = "AE_UMLAUT";
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&uc 0x00C4>, <&uc 0x00E4>; // upper: Ä, lower: ä
-        };
-
-        ue_umlaut: ue_umlaut {
-            compatible = "zmk,behavior-mod-morph";
-            label = "UE_UMLAUT";
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&uc 0x00DC>, <&uc 0x00FC>; // upper: Ü, lower: ü
-        };
-
-        oe_umlaut: oe_umlaut {
-            compatible = "zmk,behavior-mod-morph";
-            label = "OE_UMLAUT";
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&uc 0x00D6>, <&uc 0x00F6>; // upper: Ö, lower: ö
-        };
-
         ht_ae: ht_ae {
             compatible = "zmk,behavior-hold-tap";
             label = "HT_AE";
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            bindings = <&ae_umlaut>, <&kp E>;
+            bindings = <&de_ae>, <&kp E>;
         };
 
         ht_ue: ht_ue {
@@ -84,7 +75,7 @@
             label = "HT_UE";
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            bindings = <&ue_umlaut>, <&kp U>;
+            bindings = <&de_ue>, <&kp U>;
         };
 
         ht_oe: ht_oe {
@@ -92,7 +83,15 @@
             label = "HT_OE";
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            bindings = <&oe_umlaut>, <&kp O>;
+            bindings = <&de_oe>, <&kp O>;
+        };
+        
+        ht_sz: ht_sz {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_SZ";
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&de_eszett>, <&kp Z>;
         };
     };
 
@@ -106,10 +105,10 @@
 // | CAPS |  Y  	|  X  	  |  C        |  V  	  |  B  ||   	||  N  |  M	      |  , 	     |  .   	|  "        | ENT  |
 //                    			   | NAV 	| SPC 	  | CTRL|| 	    || SHIFT   | SPC    | SYM num |
             bindings = <
-                &kp TAB  &kp Q  &kp W  &ht_ae  &kp R  &kp T      &kp Z  &ht_ue  &kp I  &ht_oe  &kp P  &sl 3
+                &kp TAB  &kp Q  &kp W  &ht_ae  &kp R  &kp T      &ht_sz  &ht_ue  &kp I  &ht_oe  &kp P  &sl FN
                 &kp BSPC &hml LALT A  &hml LGUI S  &hml LCTRL D  &hml LSHFT F  &kp G   &kp H  &hmr RSHFT J  &hmr RCTRL K  &hmr RGUI L  &hmr RALT SEMI  &kp DEL
                 &caps_word &kp Y  &kp X  &kp C  &kp V  &kp B      &kp N  &kp M  &kp COMMA  &kp DOT  &kp DQT  &kp ESC
-                &mo_tog 4 4  &kp SPACE  &kp LCTRL   &kp RSHIFT  &kp SPACE  &mo_sk 1 2
+                &mo_tog NAV NAV  &kp SPACE  &kp LCTRL   &kp RSHIFT  &kp SPACE  &mo_sk NUM SYM
             >;
         };
         
@@ -146,7 +145,7 @@
 // |    |     |     |     |     |     ||   ||     |     |     |     |     |     |
 // | F1 | F2  | F3  | F4  | F5  | F6  ||   || F7  | F8  | F9  | F10 | F11 | F12 |
 // |    |     |     |     |     |     ||   ||     |     |     |     |     |     |
-//                    |   |     |     ||   ||     |     |     |
+//                  |     |     |     ||   ||     |     |     |
             bindings = <
                 &none &none &none &none &none &none    &none &none &none &none &none &none
                 &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6   &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
@@ -156,16 +155,16 @@
         };
 
         navigation_layer {
-// -----------------------------------------------------------------------------------------
-// |    |     |      |    |     |     ||   || PG_UP   | HOME |  UP   | END   |     |  VOL_UP  |
-// |    |     |      |    |     |     ||   || PG_DOWN | LEFT | DOWN  | RIGHT |     |  VOL_DOWN   |
-// |    |     |      |    |     |     ||   ||         |      |       |       |     |  MUTE   |
-//                   |    |     |     ||   ||         |      |       |
             bindings = <
-                &none &none &none &none &none &none    &kp PG_UP &kp HOME &kp UP &kp END &none &kp C_VOL_UP
-                &none &none &none &none &none &none    &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &none &kp C_VOL_DN
-                &none &none &none &none &none &none    &none &none &none &none &none &kp C_MUTE
-                         &none &none &none    &none &none &none
+// ╭─────────┬─────────┬─────────┬─────────┬─────────┬─────────╮  ╭──────────┬──────────┬─────────┬──────────┬─────────┬────────────╮
+       ___       ___       ___       ___       ___       ___        &kp PG_UP  &kp HOME   &kp UP    &kp END      ___    &kp C_VOL_UP
+// ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤  ├──────────┼──────────┼─────────┼──────────┼─────────┼────────────┤
+       ___       ___       ___       ___       ___       ___        &kp PG_DN  &kp LEFT   &kp DOWN  &kp RIGHT    ___    &kp C_VOL_DN
+// ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤  ├──────────┼──────────┼─────────┼──────────┼─────────┼────────────┤
+       ___       ___       ___       ___       ___       ___           ___       ___        ___       ___       ___      &kp C_MUTE
+// ╰─────────────────────────────┼─────────┼─────────┼─────────┤  ├──────────┼──────────┼─────────┼─────────────────────────────────╯
+                                     ___       ___       ___           ___       ___        ___ 
+//                               ╰─────────┴─────────┴─────────╯  ╰──────────┴──────────┴─────────╯
             >;
         };
     };
