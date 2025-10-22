@@ -74,10 +74,10 @@
 // | CAPS |  Y  	|  X  	  |  C        |  V  	  |  B  ||   	||  N  |  M	      |  , 	     |  .   	|  "        | ENT  |
 //                    			   | NAV 	| SPC 	  | CTRL|| 	    || SHIFT   | SPC    | SYM num |
             bindings = <
-                &kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T      &kp Z  &kp U  &kp I  &kp O  &kp P  &sl FN
-                &kp BSPC &hml LALT A  &hml LGUI S  &hml LCTRL D  &hml LSHFT F  &kp G   &kp H  &hmr RSHFT J  &hmr RCTRL K  &hmr RGUI L  &hmr RALT SEMI  &kp DEL
-                &mo_sk NUM SYM &kp Y  &kp X  &kp C  &kp V  &kp B      &kp N  &kp M  &kp COMMA  &kp DOT  &kp DQT  &kp ESC
-                &kp ENTER &kp SPACE  &kp LCTRL   &kp RSHIFT  &kp SPACE  &mo_sk NUM SYM
+                &kp TAB  &kp 1  &kp 2  &kp 3  &kp R  &kp T      &kp Z  &kp U  &kp I  &kp O  &kp P  &sl FN
+                &kp BSPC &hml LALT 4  &hml LGUI 5  &hml LCTRL 6  &hml LSHFT F  &kp G   &kp H  &hmr RSHFT J  &hmr RCTRL K  &hmr RGUI L  &hmr RALT SEMI  &kp DEL
+                &mo_sk NUM SYM &kp 7  &kp 8  &kp 9  &kp V  &kp B      &kp N  &kp M  &kp COMMA  &kp DOT  &kp DQT  &kp ESC
+                &kp G &kp ENTER  &kp LCTRL   &kp RSHIFT  &kp SPACE  &mo_sk NUM SYM
 //                &mo_tog 5 NAV  &kp SPACE  &kp LCTRL   &kp RSHIFT  &kp SPACE  &mo_sk NUM SYM
             >;
         };
