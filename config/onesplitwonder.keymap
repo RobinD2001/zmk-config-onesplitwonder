@@ -57,7 +57,7 @@
             bindings = <&mo>, <&sk>;
         };
 
-        mo_tog: behavior_mo_to {
+        mo_to: behavior_mo_to {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
