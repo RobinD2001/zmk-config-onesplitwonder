@@ -50,12 +50,12 @@
             hold-trigger-on-release;
         };
 
-        mo_sf: behavior_mo_sf {
+        mo_sl: behavior_mo_sl {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
             tapping-term-ms = <200>;
-            bindings = <&mo>, <&sf>;
+            bindings = <&mo>, <&sl>;
         };
 
         mo_to: behavior_mo_to {
@@ -94,7 +94,7 @@
 // ├─────────┼──────────┼────────────┼────────────┼────────────┼──────────┤├─────────┼────────────┼────────────┼────────────┼────────────┼────────┤
    &caps_word   &kp DE_Y   &kp DE_X   &kp DE_C   &kp DE_V   &kp DE_B          &kp DE_N   &kp DE_M   &kp DE_COMMA  &kp DE_DOT  &kp DE_DQT     &kp ESC
 // ╰────────────────────────────────┼────────────┼────────────┼──────────┤  ╰─────────┼────────────┼────────────┼──────────────────────────────────╯
-                                    &mo_to NAV NAV  &spc_enter  &kp LCTRL     &kp RSHIFT &spc_enter &mo_sf NUM SYM
+                                    &mo_to NAV NAV  &spc_enter  &kp LCTRL     &kp RSHIFT &spc_enter &mo_sl NUM SYM
 //                                  ╰────────────┴────────────┴──────────╯  ╰─────────┴───────────┴────────────╯
             >;
         };
