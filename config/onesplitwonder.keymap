@@ -25,6 +25,15 @@
 #define BT 5
 
 / {
+    combos {
+        compatible = "zmk,combos";
+        combo_enter {
+            timeout-ms = <50>;
+            key-positions = <37 40>;
+            bindings = <&kp ENTER>;
+        };
+    };
+
     behaviors {
         hml: home_row_mod_left {
             compatible = "zmk,behavior-hold-tap";
@@ -69,7 +78,7 @@
         ht_uml: ht_uml {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "tap-preferred";
+            flavor = "balanced";
             tapping-term-ms = <200>;
             bindings = <&kp>, <&kp>;
         };
@@ -92,7 +101,7 @@
 // ├─────────┼──────────┼────────────┼────────────┼────────────┼──────────┤├─────────┼────────────┼────────────┼────────────┼────────────┼────────┤
     &kp BSPC &hml LALT DE_A &hml LGUI DE_S &hml LCTRL DE_D &hml LSHFT DE_F &kp DE_G &kp DE_H &hmr RSHFT DE_J &hmr RCTRL DE_K &hmr RGUI DE_L &hmr RALT DE_SEMI  &kp DEL
 // ├─────────┼──────────┼────────────┼────────────┼────────────┼──────────┤├─────────┼────────────┼────────────┼────────────┼────────────┼────────┤
-   &caps_word   &kp DE_Y   &kp DE_X   &kp DE_C   &kp DE_V   &kp DE_B          &kp DE_N   &kp DE_M   &kp DE_COMMA  &kp DE_DOT  &kp DE_DQT     &kp ESC
+   &caps_word   &kp DE_Y   &kp DE_X   &kp DE_C   &kp DE_V   &kp DE_B          &kp DE_N   &kp DE_M   &kp DE_COMMA  &kp DE_DOT  &kp DE_MINUS   &kp ESC
 // ╰────────────────────────────────┼────────────┼────────────┼──────────┤  ╰─────────┼────────────┼────────────┼──────────────────────────────────╯
                                     &mo_to NAV NAV  &spc_enter  &kp LCTRL     &kp RSHIFT &spc_enter &mo_sl NUM SYM
 //                                  ╰────────────┴────────────┴──────────╯  ╰─────────┴───────────┴────────────╯
@@ -146,7 +155,7 @@
         navigation_layer {
             bindings = <
 // ╭─────────┬──────────┬──────────┬──────────┬──────────┬──────────╮  ╭─────────────┬──────────┬──────────┬───────────┬──────────┬─────────────╮
-    &kp C_VOL_DN  &kp C_VOL_UP     &trans    &trans     &trans    &trans         &kp PG_UP    &kp HOME   &kp UP     &kp END     &trans     &kp C_PREV
+    &kp C_VOL_DN &kp C_VOL_UP  &trans  &trans    &trans    &trans         &kp PG_UP    &kp HOME   &kp UP     &kp END     &trans     &kp C_PREV
 // ├─────────┼──────────┼──────────┼──────────┼──────────┼──────────┤  ├─────────────┼──────────┼──────────┼───────────┼──────────┼─────────────┤
        &trans   &trans      &trans    &trans     &trans    &trans         &kp PG_DN    &kp LEFT   &kp DOWN   &kp RIGHT    &trans     &kp C_NEXT
 // ├─────────┼──────────┼──────────┼──────────┼──────────┼──────────┤  ├─────────────┼──────────┼──────────┼───────────┼──────────┼─────────────┤
